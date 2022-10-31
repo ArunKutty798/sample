@@ -1,0 +1,93 @@
+.features {
+  background: linear-gradient(180deg, #060e11 70.35%, rgba(19, 25, 33, 0) 100%);
+  .features_wrapper {
+    padding: 8rem 0 0;
+
+    .container {
+      .block_header {
+        text-align: center;
+        margin-bottom: 9rem;
+      }
+
+      .features_card_wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.6rem;
+
+        @media (max-width: 1024px) {
+          grid-template-columns: repeat(2, 1fr);
+          margin-top: 3.5rem;
+        }
+
+        @media (max-width: 767px) {
+          grid-template-columns: repeat(1, 1fr);
+          margin-top: 3.5rem;
+        }
+
+        .features_card {
+          background-color: var(--card-bg);
+          box-shadow: var(--card-box-shadow);
+          backdrop-filter: blur(10px);
+          border-radius: 20px;
+          padding: 20px 20px 30px;
+          position: relative;
+          transition: 0.3s all ease-in-out;
+          text-align: center;
+
+          @media (max-width: 1024px) {
+            margin-bottom: 5rem;
+          }
+
+          &:hover {
+            &::before {
+              opacity: 1;
+            }
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            opacity: 0;
+            transition: 0.3s all ease-in-out;
+            z-index: -1;
+          }
+
+          .icon {
+            min-width: 64px;
+            width: 64px;
+            height: 64px;
+            background: var(--primary-gradient);
+            border-radius: 12px;
+            transform: rotate(45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            margin-top: -52px;
+            margin-bottom: 36px;
+          }
+
+          .features_content {
+            > a {
+              font-size: 2.2rem;
+              line-height: 1.4;
+              color: var(--text-primary);
+              margin-bottom: 1rem;
+              transition: all 0.3s;
+
+              &:hover {
+                color: var(--primary);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
